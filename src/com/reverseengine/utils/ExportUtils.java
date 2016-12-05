@@ -94,6 +94,8 @@ public class ExportUtils
 		addressLabel = new jxl.write.Label(10, 0, "其余描述信息", wcf);
 		sheet.addCell(addressLabel);
 
+		addressLabel = new jxl.write.Label(11, 0, "漏洞详细报告", wcf);
+		sheet.addCell(addressLabel);
 	
 	}
 	private static File exportResultXLSFile(String dir, String name, List<APKInfo> resultList)
@@ -148,6 +150,8 @@ public class ExportUtils
 			sheet.addCell(addressLabel);
 
 			addressLabel = new jxl.write.Label(10, colum, result.getOtherinfo(), wcf);
+			sheet.addCell(addressLabel);
+			addressLabel = new jxl.write.Label(11, colum, result.getWeakness(), wcf);
 			sheet.addCell(addressLabel);
 
 

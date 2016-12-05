@@ -27,6 +27,7 @@ public class ApkUtil{
 	private String versionName="UnKown";
 	private String userSdk="Unkown";
 	private String pkgname="Unknow";
+	private List<String> permissions=new ArrayList<String>();
 	public ApkUtil(String apkpath)
 	{
 		super();
@@ -40,13 +41,24 @@ public class ApkUtil{
 			Element elemUseSdk = root.getChild("uses-sdk");
 			userSdk=(elemUseSdk.getAttributeValue("minSdkVersion", NS));
 			pkgname=root.getAttributeValue("package", NS);
-			
+			List listPermission = root.getChildren("uses-permission");//子节点是个集合  
+		     
+		        for(Object object : listPermission){  
+		            String permission = ((Element)object).getAttributeValue("name", NS);  
+		            permissions.add(permission);  
+		        }  
+		        
 			
 		}catch (Exception e) {
 			
 		}
 
 		// TODO Auto-generated constructor stub
+	}
+
+	public List<String> getPermissions()
+	{
+		return permissions;
 	}
 
 	public String getPkgname()

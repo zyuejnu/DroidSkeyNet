@@ -19,6 +19,8 @@ import org.dom4j.Element;
 
 
 
+
+
 public class ObfuscationChecker {
 
 	private static Element getNextElement(Element e,String what)
@@ -196,6 +198,7 @@ public class ObfuscationChecker {
 		//System.out.println(matcher.matches());
 		if(matcher.matches())
 		AnalysisReport.addInfo("发现代码混淆类:"+file.getAbsolutePath());
+		
 		return matcher.matches();
 	}
 	private static String rootpath=RootDirHelper.getTempDir()+File.separator+"destnation"+File.separator+"smali"+File.separator;

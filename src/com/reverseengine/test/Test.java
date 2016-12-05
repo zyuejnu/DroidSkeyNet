@@ -8,6 +8,8 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import com.reverseengine.utils.WeaknessDetectUtils;
+
 
 
 /**
@@ -17,13 +19,47 @@ import java.util.zip.ZipFile;
  * 
  * @Description:
  * 
- * @author rickicui
+ * @author zy
  * 
- * @date Jan 28, 2013 6:07:39 PM
+ * @date Jan 28, 2016 6:07:39 PM
  * 
  * 
  */
 public class Test {
+	
+	
+	public static void main(String args[]) throws Exception{
+		
+		new Thread(new Runnable()
+		{
+			
+			@Override
+			public void run()
+			{
+				// TODO Auto-generated method stub
+				try
+				{
+					WeaknessDetectUtils.sakeAvailableURL("E:\\WeChat\\com.eg.android.alipaygphone_7.5.1.0927_42\\smali\\com\\alipay");
+				}
+				catch (Exception e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		}).start();
+		
+		
+		//WeaknessDetectUtils.testURLinIt(".field public static final MTOP_ADVANCE_URL:Ljava/lang/String; = \"http://api.wapa.taobao.com/rest/api3.do\"");
+		//System.out.println(WeaknessDetectUtils.containsURL(" \"http://api.wapa.taobao.com/rest/api3.do\""));
+		//System.out.println(WeaknessDetectUtils.isAvailableURL("\"http://api.wapa.taobao.com/rest/api3.do\""));
+		/*
+		System.out.println(WeaknessDetectUtils.isURL("\"http://www.badu.com\""));
+		System.out.println("\"www.badu.com\"");
+		System.out.println(WeaknessDetectUtils.isURL("\"http://api.wapa.taobao.com/rest/api3.do\""));*/
+		
+	}
 	/**
 	 * 解压 zip 文件(apk可以当成一个zip文件)，注意不能解压 rar 文件哦，只能解压 zip 文件 解压 rar 文件 会出现
 	 * java.io.IOException: Negative seek offset 异常 create date:2009- 6- 9
@@ -37,6 +73,9 @@ public class Test {
 	 * @throws Exception
 	 * @throws IOException
 	 *//*
+	 *
+	 *
+	 *
 	public static String[] unZip(String apkUrl, String logoUrl)
 			throws Exception {
 		// [0]:版本号;[1]包名;[2]签名

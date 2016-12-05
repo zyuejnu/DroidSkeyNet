@@ -51,7 +51,7 @@ import javax.swing.JComboBox;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
 
-public class MainUI
+public class MainEngUI
 {
 
 	
@@ -63,7 +63,7 @@ public class MainUI
 	Color infocolor=new Color(255, 255, 255);
 	Color typecolor=new Color(128, 0, 0);
 	private JTextField loadpre;
-	JLabel label ;
+	JLabel lblTipsLogInformation ;
 	JTable res_table;
 	JComboBox yearcb;
 	Vector res_cellData = new Vector();
@@ -84,7 +84,7 @@ public class MainUI
 				try
 				{
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					MainUI window = new MainUI();
+					MainEngUI window = new MainEngUI();
 					window.frame.setVisible(true);
 				}
 				catch (Exception e)
@@ -170,7 +170,7 @@ public class MainUI
 	/**
 	 * Create the application.
 	 */
-	public MainUI()
+	public MainEngUI()
 	{
 		initialize();
 	}
@@ -186,11 +186,11 @@ public class MainUI
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton button = new JButton("\u8F7D\u5165\u76EE\u5F55");
-		button.setForeground(fontcolor);
-		button.setFont(new Font("宋体", Font.BOLD, 12));
-		button.setBackground(fontcolor);
-		button.addActionListener(new ActionListener() {
+		JButton btnLoadDir = new JButton("LOAD DIR");
+		btnLoadDir.setForeground(fontcolor);
+		btnLoadDir.setFont(new Font("宋体", Font.BOLD, 12));
+		btnLoadDir.setBackground(fontcolor);
+		btnLoadDir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
 				JFileChooser jFileChooser = new JFileChooser("选择反编译文件保存的目录");
@@ -215,8 +215,8 @@ public class MainUI
 
 			
 		});
-		button.setBounds(333, 10, 91, 23);
-		frame.getContentPane().add(button);
+		btnLoadDir.setBounds(333, 10, 91, 23);
+		frame.getContentPane().add(btnLoadDir);
 	
 		List<String> res_colnames = new ArrayList<String>();
 		Collections.addAll(res_colnames, RES_COL_NAMES);
@@ -231,7 +231,7 @@ public class MainUI
 		jsp.setBounds(10, 318, 414, 300);
 		frame.getContentPane().add(jsp);
 		
-		JButton startbtn = new JButton("\u5F00\u59CB\u68C0\u6D4B");
+		JButton startbtn = new JButton("START");
 		startbtn.setFont(new Font("宋体", Font.BOLD, 12));
 		startbtn.setForeground(fontcolor);
 		startbtn.addActionListener(new ActionListener() {
@@ -393,7 +393,7 @@ public class MainUI
 						
 
 						}
-						label.setText("提示信息:全部检测完成。");
+						lblTipsLogInformation.setText("提示信息:全部检测完成。");
 					}
 				}).start();
 				
@@ -403,7 +403,7 @@ public class MainUI
 		startbtn.setBounds(194, 628, 110, 23);
 		frame.getContentPane().add(startbtn);
 		
-		JButton exportbtn = new JButton("\u5BFC\u51FA\u62A5\u8868");
+		JButton exportbtn = new JButton("EXPORT");
 		exportbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jFileChooser = new JFileChooser("选择反编译文件保存的目录");
@@ -438,11 +438,11 @@ public class MainUI
 		exportbtn.setBounds(314, 628, 110, 23);
 		frame.getContentPane().add(exportbtn);
 		
-		label = new JLabel("提示信息:本软件专门为测试我的反编译工程批量测试而研制。");
-		label.setFont(new Font("宋体", Font.BOLD, 12));
-		label.setForeground(infocolor);
-		label.setBounds(20, 43, 414, 15);
-		frame.getContentPane().add(label);
+		lblTipsLogInformation = new JLabel("Tips: log information can been show here.");
+		lblTipsLogInformation.setFont(new Font("宋体", Font.BOLD, 12));
+		lblTipsLogInformation.setForeground(infocolor);
+		lblTipsLogInformation.setBounds(20, 43, 414, 15);
+		frame.getContentPane().add(lblTipsLogInformation);
 		
 		loadpre = new JTextField();
 		loadpre.setForeground(typecolor);
@@ -455,10 +455,10 @@ public class MainUI
 		lblNewLabel.setBounds(10, 68, 414, 212);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblapk = new JLabel("apk\u51FA\u73B0\u5E74\u4EFD\uFF1A");
+		JLabel lblapk = new JLabel("YEAR\uFF1A");
 		lblapk.setFont(new Font("宋体", Font.BOLD, 12));
 		lblapk.setForeground(Color.WHITE);
-		lblapk.setBounds(262, 290, 91, 15);
+		lblapk.setBounds(301, 293, 48, 15);
 		frame.getContentPane().add(lblapk);
 		
 		yearcb = new JComboBox(new String[]{"2009","2010","2011","2012","2013","2014","2015","2016"});
@@ -479,19 +479,19 @@ public class MainUI
 		frame.getContentPane().add(tx_type);
 		tx_type.setColumns(10);
 		
-		JButton button_1 = new JButton("\u6E05\u7A7A\u6570\u636E");
-		button_1.addActionListener(new ActionListener() {
+		JButton btnClearDat = new JButton("CLEAR");
+		btnClearDat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				res_infos.clear();
 				refrashResult();
 			}
 		});
-		button_1.setFont(new Font("宋体", Font.BOLD, 12));
-		button_1.setForeground(fontcolor);
-		button_1.setBounds(91, 628, 93, 23);
-		frame.getContentPane().add(button_1);
+		btnClearDat.setFont(new Font("宋体", Font.BOLD, 12));
+		btnClearDat.setForeground(fontcolor);
+		btnClearDat.setBounds(91, 628, 93, 23);
+		frame.getContentPane().add(btnClearDat);
 		
-		JButton btnNewButton = new JButton("打印综合报告");
+		JButton btnNewButton = new JButton("OUTPUT");
 		btnNewButton.setFont(new Font("宋体", Font.BOLD, 12));
 		btnNewButton.setForeground(fontcolor);
 		btnNewButton.addActionListener(new ActionListener() {

@@ -6,6 +6,7 @@ public class APKInfo
 	
 	
 	
+	
 	@Override
 	public String toString()
 	{
@@ -19,7 +20,16 @@ public class APKInfo
 	private String versionName="UnKnow";
 	private String userSDK="UnKnow";
 	private String apkName="UnKnow";
+	private String weakness="no";
 
+	public String getWeakness()
+	{
+		return weakness;
+	}
+	public void setWeakness(String weakness)
+	{
+		this.weakness = weakness;
+	}
 	private String checktime="UnKonw";
 	public String getChecktime()
 	{
