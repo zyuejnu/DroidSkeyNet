@@ -1,0 +1,2 @@
+# ReverseEngine
+ReverseEngine load the “APK” file at the first time, try to reverse engineering the application,in its progress of extracting the source code, there is many steps to distinguish whetherthe source code was being protected by code protection.There also many modules in each step, every module has different function, there also many modules has played a prominent role in ReverseEngine but not contain in the Fig.1.
