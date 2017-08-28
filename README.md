@@ -7,11 +7,10 @@
 ==========================
 Installation instructions:
 
-1.Make a new folder on the first disk and labeled it "ReverseEngine".
-2.Copy the apktool into the folder "ReverseEngine".
-3.Keep the folder "res" with the runnable  "DroidSkynet.jar".
+1.Copy the folder "ReverseEngine" into  the first disk.
+2.Keep the folder "res" with the runnable  "DroidSkynet.jar".
 3.Double-click "DroidSkynet.jar".
 
 The official page for this book can be found here: https://github.com/zyuejnu/DroidSkeyNet
 
-All the code examples were working on Java 1.6+, there shouldn't be any problems with the Java 1.6+. 
+This is working on Java 1.6+, there shouldn't be any problems with the Java 1.6+. 
