@@ -2,9 +2,7 @@ DroidSkynet consists of four major components: basic information analysis , sour
 
 ========================== Installation instructions:
 
-1.Copy the folder "ReverseEngine" into the first disk./r/n
-2.Keep the folder "res" with the runnable "DroidSkynet.jar"./r/n
-3.Double-click "DroidSkynet.jar".
+Copy the folder "ReverseEngine" into the first disk;Keep the folder "res" with the runnable "DroidSkynet.jar";Double-click "DroidSkynet.jar".
 
 The official page for this book can be found here: https://github.com/zyuejnu/DroidSkeyNet
 
